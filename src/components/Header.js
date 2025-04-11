@@ -3,10 +3,10 @@ import logo from '../assets/logo.jpg'
 import Button from './UI/Button';
 import CartContext from '../store/CartContext';
 
-const Header = () => {
+const Header = (props) => {
 
     const { items } = useContext(CartContext)
-    
+
     return (
         <header id="main-header">
             <div id="title">
@@ -14,7 +14,7 @@ const Header = () => {
                 <h1>React Food Order App</h1>
             </div>
             <nav>
-            <Button className='text-button' textOnly = {true}>Cart ({items.length}) </Button>
+            <Button className='text-button' textOnly = {true} onClick={props.openModal}>Cart ({items.length}) </Button>
                         </nav>
         </header>
     )
